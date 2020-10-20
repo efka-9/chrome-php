@@ -230,7 +230,7 @@ class ChromeHeadless
     {
         $command = $this->createCommand();
 
-        $chrome = new Process($command);
+        $chrome = Process::fromShellCommandline($command);
 
         if (! is_null($this->timeout)) {
             $chrome->setTimeout($this->timeout);
